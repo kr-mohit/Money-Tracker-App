@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Money Tracker</string>
+    <string name="amount">Amount</string>
+    <string name="details">Details</string>
+    <string name="category">Category</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="enter_details">Enter Details</string>
+    <string name="enter_category">Enter Category</string>
+    <string name="add_expense">ADD EXPENSE</string>
+    <string name="view_expenses">View Expenses</string>
+    <string name="view_summary">View Summary</string>
+    <string name="delete_all">Delete all</string>
+    <string name="add_an_expense">ADD AN EXPENSE</string>
+    <string name="select_date">Select Date</string>
+    <string name="add_data">Add data</string>
+    <string name="total_expense">Total Expense: %1$s</string>
+    <string name="expense">Expense</string>
+    <string name="needs">Needs</string>
+    <string name="wants">Wants</string>
+    <string name="investments">Investments</string>
+    <string name="others">Others</string>
+    <string name="no_data_present">No data present</string>
+    <string name="mm_dd_yy">MM/DD/YY</string>
+    <string name="date">Date</string>
+    <string name="all">All</string>
+    <string name="need">Need</string>
+    <string name="want">Want</string>
+    <string name="investment">Investment</string>
+    <string name="other">Other</string>
+</resources>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primary_color"
+        tools:context=".fragments.ViewExpenseFragment">
+
+        <ImageView
+            android:id="@+id/iv_go_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_back"
+            android:textAllCaps="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btn_delete_all"
+            app:layout_constraintBottom_toBottomOf="@id/btn_delete_all" />
+
+        <RadioGroup
+            android:id="@+id/rg_radio_group"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_delete_all" >
+
+            <RadioButton
+                android:id="@+id/rb_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/all" />
+
+            <RadioButton
+                android:id="@+id/rb_needs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/need" />
+
+            <RadioButton
+                android:id="@+id/rb_wants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/want" />
+
+            <RadioButton
+                android:id="@+id/rb_investments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/investment" />
+
+            <RadioButton
+                android:id="@+id/rb_others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/btn_delete_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_all"
+            android:backgroundTint="@color/accent_color"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_heading_amount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/amount"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_heading_details"
+            app:layout_constraintTop_toBottomOf="@id/rg_radio_group" />
+
+        <TextView
+            android:id="@+id/tv_heading_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/details"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/tv_heading_amount"
+            app:layout_constraintEnd_toStartOf="@id/tv_heading_category"
+            app:layout_constraintTop_toTopOf="@id/tv_heading_amount" />
+
+        <TextView
+            android:id="@+id/tv_heading_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/category"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/tv_heading_details"
+            app:layout_constraintEnd_toStartOf="@id/tv_heading_date"
+            app:layout_constraintTop_toTopOf="@id/tv_heading_amount" />
+
+        <TextView
+            android:id="@+id/tv_heading_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/date"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toEndOf="@id/tv_heading_category"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_heading_amount" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_expenses"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_heading_amount"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_no_data"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_file"
+            android:alpha="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_delete_all"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data_present"
+            android:textColor="@color/white"
+            android:textSize="26sp"
+            android:alpha="0.6"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@id/iv_no_data"
+            app:layout_constraintEnd_toEndOf="@id/iv_no_data"
+            app:layout_constraintTop_toBottomOf="@id/iv_no_data" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tv_heading_amount, tv_heading_details, tv_heading_category, tv_heading_date, rv_expenses" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="iv_no_data, tv_no_data" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
